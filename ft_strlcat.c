@@ -6,10 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 15:59:12 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/19 13:12:41 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/09/19 17:30:43 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
+
 #include <stdio.h>
 #include <string.h>
 
@@ -37,7 +37,7 @@ int	main(void)
 	printf("Expected Value = %d\n", r_t);
 	return(0);
 }
-*/
+
 size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
 	size_t	i;

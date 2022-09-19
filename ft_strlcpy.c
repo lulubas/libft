@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 15:09:38 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/19 13:08:11 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/09/19 18:03:58 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -38,7 +38,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 	j = 0;
 	while (src[j] != 0)
 		j++;
-	while (*dst && i < n - 1)
+	while (*src && i < n - 1)
 	{
 		*dst = *src;
 		i++;
