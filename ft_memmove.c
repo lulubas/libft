@@ -6,14 +6,13 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 16:35:53 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/06 16:59:51 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/09/19 12:57:12 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 
-void*	ft_memmove(void *dst, const void *src, size_t n);
-
+void	*ft_memmove(void *dst, const void *src, size_t n);
 int	main(void)
 {
 	char	src[50] = "coucou je mappelle louis mon ami";
@@ -29,28 +28,40 @@ int	main(void)
 	return(0);
 }
 */
-void*	ft_memmove(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void	*dst, const void *src, size_t n);
+
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	char	*s;
 	char	*d;
-	char	tmp[n];
 	size_t	i;
 
 	s = (char *)src;
 	d = (char *)dst;
 	i = 0;
-	while (i < n)
+	if (s < d)
 	{
-		tmp[i] = *s;
+		while (n--)
+			d[n] = s[n];
+	}
+	else
+		ft_memcpy(d, s, n);
+	return (dst);
+}
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	char	*s;
+	char	*d;
+
+	s = (char *)src;
+	d = (char *)dst;
+	while (n > 0)
+	{
+		*d = *s;
 		s++;
-		i++;
-	}
-	i = 0;
-	while (i < n)
-	{
-		*d = tmp[i];
 		d++;
-		i++;
+		n--;
 	}
-	return(dst);
+	return (dst);
 }

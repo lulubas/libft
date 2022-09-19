@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 17:52:35 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/19 13:16:50 by lbastien         ###   ########.fr       */
+/*   Created: 2022/09/08 11:19:49 by lbastien          #+#    #+#             */
+/*   Updated: 2022/09/08 12:23:16 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <string.h>
 #include <stdio.h>
-char*	ft_strchr(const char *str, int c);
+char*	ft_strrchr(const char *str, int c);
+int	ft_strlen(const char *str);
 int	main(void)
 {
 	char	str[50] = "This is a test string to try";
@@ -25,19 +26,45 @@ int	main(void)
 	scanf(" %c", &t);
 	c = t;
 	printf("Your char int equivalent is = %d\n", c);
-	printf("The end result is = %s\n", ft_strchr(str, c));
-	printf("The expected result is = %s\n", strchr(str_t, c));
+	printf("The end result is = %s\n", ft_strrchr(str, c));
+	printf("The expected result is = %s\n", strrchr(str_t, c));
 	return(0);
 }
 */
-char	*ft_strchr(const char *str, int c)
+char*	ft_strrchr(const char *str, int c)
 {
-	char	a;
+	char a;
+	int i;
+	int j;
 
+	i = ft_strlen(str);
 	a = c;
-	while (*str && *str != a)
+	j = 0;
+
+	while (j < i)
+	{
 		str++;
-	if (*str != a)
-		return (0);
-	return ((char *)str);
+		j++;
+	}
+	while (i > 0 && *str != a)
+	{
+		str--;
+		i--;
+	}
+	if (i == 0)
+		return(0);
+	return((char *)str);
+}
+
+int	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (*str)
+	{
+		i++;
+		str++;
+	}
+	return (i);
 }

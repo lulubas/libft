@@ -6,12 +6,12 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 15:01:48 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/05 15:45:56 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/09/19 11:56:20 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_isascii(unsigned char a)
 {
 	if (a < 0 || a > 127)
-		return(0);
-	return(1);
+		return (0);
+	return (1);
 }

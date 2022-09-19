@@ -1,50 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 15:09:38 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/19 13:08:11 by lbastien         ###   ########.fr       */
+/*   Created: 2022/09/08 13:18:21 by lbastien          #+#    #+#             */
+/*   Updated: 2022/09/19 13:24:04 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t n);
+#include <stdio.h>
+#include <string.h>
+/*
+int	ft_memcmp(const void *s1, const void *s2, size_t n);
 
 int	main(void)
 {
-	char	src[50] = "coucou je mappelle louis mon ami";
-	char	dst[50] = "that is the destination";
+	char	src[50] = "coucouu";
+	char	dst[50] = "coucouuu";
 	size_t	n;
 
 	printf("Enter n :");
 	scanf("%zu", &n);
 	printf("Source = %s\n", src);
 	printf("Destination = %s\n", dst);
-	ft_strlcpy(dst, src, n);
-	printf("New destination = %s\n", dst);
+	printf("Return Value = %d\n", ft_memcmp(src, dst, n));
+	printf("Expected Value = %d\n", memcmp(src, dst, n));
 	return(0);
 }
 */
-size_t	ft_strlcpy(char *dst, const char *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	int		j;
+	unsigned char	*a;
+	unsigned char	*b;
 
-	i = 0;
-	j = 0;
-	while (src[j] != 0)
-		j++;
-	while (*dst && i < n - 1)
+	a = (unsigned char *)s1;
+	b = (unsigned char *)s2;
+	while (*a == *b && n > 1)
 	{
-		*dst = *src;
-		i++;
-		dst++;
-		src++;
+		a++;
+		b++;
+		n--;
 	}
-	*dst = 0;
-	return (j);
+	return (*a - *b);
 }

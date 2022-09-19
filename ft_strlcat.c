@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 15:59:12 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/07 16:49:55 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/09/19 13:12:41 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -14,7 +14,6 @@
 #include <string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t n);
-
 int	main(void)
 {
 	char	src[50] = "coucou je mappelle louis mon ami";
@@ -58,8 +57,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 	while (*src && j < n - 1)
 	{
 		dst[j] = *src;
-		j++;;
+		j++;
 		src++;
 	}
-	return(v);
+	return (v);
 }

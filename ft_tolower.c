@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:30:16 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/07 17:41:21 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/09/19 13:13:24 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -29,5 +29,5 @@ int	ft_tolower(int c)
 {
 	if (c > 64 && c < 91)
 		c += 32;
-	return(c);
+	return (c);
 }

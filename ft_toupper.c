@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:01:41 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/07 17:38:19 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/09/19 13:13:09 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -29,5 +29,5 @@ int	ft_toupper(int c)
 {
 	if (c > 96 && c < 122)
 		c -= 32;
-	return(c);
+	return (c);
 }

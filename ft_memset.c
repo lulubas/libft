@@ -6,10 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 19:49:58 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/06 14:59:31 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/09/19 12:02:40 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include<stdio.h>
 void*	ft_memset(void *str, int c, size_t n);
 
@@ -28,17 +28,17 @@ int	main(void)
 	printf("String = %s\n", str);
 	return(0);
 }
-
-void*	ft_memset(void *str, int c, size_t n)
+*/
+void	*ft_memset(void *str, int c, size_t n)
 {
 	unsigned char	*ctr;
-	ctr = (unsigned char *) str;
 
+	ctr = (unsigned char *)str;
 	while (n > 0)
 	{
 		*ctr = c;
 		ctr++;
 		n--;
 	}
-	return(str);
+	return (str);
 }
