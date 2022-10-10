@@ -6,10 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:38:55 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/06 16:14:04 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/10 19:00:10 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include <stdio.h>
 
 void*	ft_memcpy(void *dst, const void *src, size_t n);
@@ -28,15 +28,14 @@ int	main(void)
 	printf("New destination = %s\n", dst);
 	return(0);
 }
-
-void*	ft_memcpy(void *dst, const void *src, size_t n)
+*/
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	char	*s;
 	char	*d;
-	
+
 	s = (char *)src;
 	d = (char *)dst;
-
 	while (n > 0)
 	{
 		*d = *s;
@@ -44,5 +43,5 @@ void*	ft_memcpy(void *dst, const void *src, size_t n)
 		d++;
 		n--;
 	}
-	return(dst);
+	return (dst);
 }

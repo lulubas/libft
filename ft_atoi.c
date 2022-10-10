@@ -6,10 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 16:40:21 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/19 13:33:30 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/10 22:16:35 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
+
 #include <stdlib.h>
 #include <stdio.h>
 int	ft_atoi(const char *str);
@@ -26,7 +26,7 @@ int	main(void)
 		printf("\nSuccess !! Well done !!\n");
 	return(0);
 }
-*/
+
 int	ft_atoi(const char *str)
 {
 	int	r;

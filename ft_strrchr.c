@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:19:49 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/08 12:23:16 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/10 19:02:55 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -31,16 +31,15 @@ int	main(void)
 	return(0);
 }
 */
-char*	ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
-	char a;
-	int i;
-	int j;
+	char	a;
+	int		i;
+	int		j;
 
 	i = ft_strlen(str);
 	a = c;
 	j = 0;
-
 	while (j < i)
 	{
 		str++;
@@ -52,8 +51,8 @@ char*	ft_strrchr(const char *str, int c)
 		i--;
 	}
 	if (i == 0)
-		return(0);
-	return((char *)str);
+		return (0);
+	return ((char *)str);
 }
 
 int	ft_strlen(const char *str)
