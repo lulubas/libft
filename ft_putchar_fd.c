@@ -6,14 +6,17 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 17:57:01 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/10 18:59:25 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:20:17 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<unistd.h>
-/*
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+/* Main
 #include<stdio.h>
 #include <fcntl.h>
-void	ft_putchar_fd(char c, int fd);
 int	main(void)
 {
  	int fd;
@@ -28,7 +31,3 @@ int	main(void)
 	return (0);
 }
 */
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}

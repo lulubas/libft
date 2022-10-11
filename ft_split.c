@@ -6,36 +6,12 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 17:00:49 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/21 15:52:55 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 14:55:20 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdlib.h>
-/*
-#include<string.h>
-#include<stdio.h>
 
-char	**ft_split(char	const *s, char c);
-
-int	main(void)
-{
-	char	str[50] = "salut?je?mappelle????louis";
-	char	c;
-	int		i;
-	
-	c = 63;
-	printf("The initial string is: %s\n", str);
-	printf("The delimiter character is: %c\n", c);
-	printf("Result (new line delimited):\n");
-	for (i = 0; i < 4; i++){
-		printf("%s\n", ft_split(str, c)[i]);
-	}
-	return (0);
-}
-*/
 int		ft_count(char *s, char c);
 char	*ft_assign(char *str, int n);
-int		ft_strlen(char *str);
-size_t	ft_strlcpy(char *dst, const char *src, size_t n);
 
 char	**ft_split(char const *s, char c)
 {
@@ -85,36 +61,21 @@ char	*ft_assign(char *str, int n)
 	ft_strlcpy(word, str, n + 1);
 	return (word);
 }
-
-int	ft_strlen(char *str)
+/* Main
+#include<stdio.h>
+int	main(void)
 {
-	int	i;
-
-	i = 0;
-	while (*str)
-	{
-		i++;
-		str++;
+	char	str[50] = "hello?my?name??is???louis";
+	char	c;
+	int		i;
+	
+	c = 63;
+	printf("The initial string is: %s\n", str);
+	printf("The delimiter character is: %c\n", c);
+	printf("Result (new line delimited):\n");
+	for (i = 0; i < 4; i++){
+		printf("%s\n", ft_split(str, c)[i]);
 	}
-	return (i);
+	return (0);
 }
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t n)
-{
-	size_t	i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	while (src[j] != 0)
-		j++;
-	while (*src && i < n - 1)
-	{
-		*dst = *src;
-		i++;
-		dst++;
-		src++;
-	}
-	*dst = 0;
-	return (j);
-}
+*/

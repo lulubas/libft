@@ -6,11 +6,22 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:52:35 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/19 13:16:50 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 14:10:16 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <string.h>
+
+char	*ft_strchr(const char *str, int c)
+{
+	char	a;
+
+	a = c;
+	while (*str && *str != a)
+		str++;
+	if (*str != a)
+		return (0);
+	return ((char *)str);
+}
+/* Main
 #include <stdio.h>
 char*	ft_strchr(const char *str, int c);
 int	main(void)
@@ -30,14 +41,3 @@ int	main(void)
 	return(0);
 }
 */
-char	*ft_strchr(const char *str, int c)
-{
-	char	a;
-
-	a = c;
-	while (*str && *str != a)
-		str++;
-	if (*str != a)
-		return (0);
-	return ((char *)str);
-}

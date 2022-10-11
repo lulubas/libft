@@ -6,13 +6,18 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:01:41 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/19 13:13:09 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 14:03:20 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
 
-int	ft_toupper(int c);
+int	ft_toupper(int c)
+{
+	if (c > 96 && c < 122)
+		c -= 32;
+	return (c);
+}
+/* Main
+#include <stdio.h>
 int	main(void)
 {
 	int c;
@@ -25,9 +30,3 @@ int	main(void)
 	printf("End Char = %c\n", i);
 }
 */
-int	ft_toupper(int c)
-{
-	if (c > 96 && c < 122)
-		c -= 32;
-	return (c);
-}

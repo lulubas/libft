@@ -6,23 +6,29 @@
 #    By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 22:10:10 by lbastien          #+#    #+#              #
-#    Updated: 2022/10/10 22:17:19 by lbastien         ###   ########.fr        #
+#    Updated: 2022/10/11 15:32:30 by lbastien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = tolibft
+NAME = libft.a
+SRCS = *.c
+OBJS = $(SRCS:%.c=%.o)
+HEADS = *.h
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+RM = rm -f
 
-SRC = ft_atoi.c
-
-all: $(NAME)
-
-$(NAME) :
-	gcc -o $(NAME) $(SRC)
+all:
+	$(CC) $(CFLAGS) -I $(HEADS) -c $(SRCS)
+	ar -rv $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 clean:
-	/bin/rm -f *.o
+	$(RM) $(OBJS)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all, clean, fclean, re

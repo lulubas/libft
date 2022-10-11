@@ -6,31 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:26:30 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/19 16:51:48 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 14:27:38 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-/*
-#include <stdio.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-int	main(void)
-{
-	const char	s[50] = "coucou je mappelle louis";
-	unsigned int	start;
-	size_t	len;
-
-	printf("The initial string is: %s\n", s);
-	printf("Enter substring index start:");
-	scanf("%d", &start);
-	printf("Enter substring length:");
-	scanf("%zu", &len);
-	printf("\nResult : %s\n", ft_substr(s, start, len));
-
-	free(ft_substr(s, start, len));
-	return(0);
-}
-*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
@@ -49,3 +28,22 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = 0;
 	return (sub);
 }
+/* Main
+#include <stdio.h>
+int	main(void)
+{
+	const char	s[50] = "Hello my name is lulu";
+	unsigned int	start;
+	size_t	len;
+
+	printf("The initial string is: %s\n", s);
+	printf("Enter substring index start:");
+	scanf("%d", &start);
+	printf("Enter substring length:");
+	scanf("%zu", &len);
+	printf("\nResult : %s\n", ft_substr(s, start, len));
+
+	free(ft_substr(s, start, len));
+	return(0);
+}
+*/

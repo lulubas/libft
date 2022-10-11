@@ -6,13 +6,28 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 12:25:32 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/19 13:22:51 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 14:13:27 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <string.h>
+
+void	*ft_memchr(const void *str, int c, size_t n)
+{
+	unsigned char	a;
+	unsigned char	*s;
+
+	a = c;
+	s = (unsigned char *)str;
+	while (*s && *s != a && n > 1)
+	{
+		s++;
+		n--;
+	}
+	if (*s != a)
+		return (0);
+	return ((void *)s);
+}
+/* Main
 #include <stdio.h>
-void*	ft_memchr(const void *str, int c, size_t n);
 int	main(void)
 {
 	char	str[50] = "This is a test string to try";
@@ -33,19 +48,3 @@ int	main(void)
 	return(0);
 }
 */
-void	*ft_memchr(const void *str, int c, size_t n)
-{
-	unsigned char	a;
-	unsigned char	*s;
-
-	a = c;
-	s = (unsigned char *)str;
-	while (*s && *s != a && n > 1)
-	{
-		s++;
-		n--;
-	}
-	if (*s != a)
-		return (0);
-	return ((void *)s);
-}

@@ -6,16 +6,17 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 17:56:04 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/10 19:00:57 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:21:56 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<unistd.h>
-/*
+
+void	ft_putstr_fd(char *str, int fd)
+{
+	write(fd, str, ft_strlen(str));
+}
+/* Main
 #include<stdio.h>
 #include <fcntl.h>
-void ft_putstr_fd(char *s, int fd);
-int	ft_strlen(char *str);
-
 int	main(void)
 {
  	int fd;
@@ -30,20 +31,3 @@ int	main(void)
 	return (0);
 }
 */
-void	ft_putstr_fd(char *str, int fd)
-{
-	write(fd, str, ft_strlen(str));
-}
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (*str)
-	{
-		i++;
-		str++;
-	}
-	return (i);
-}

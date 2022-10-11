@@ -6,16 +6,18 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:13:32 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/10 19:00:26 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:29:25 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<unistd.h>
-/*
+
+void	ft_putendl_fd(char *str, int fd)
+{
+	ft_putstr_fd(str, fd);
+	ft_putchar_fd("\n", fd);
+}
+/* Main
 #include<stdio.h>
 #include <fcntl.h>
-void ft_putendl_fd(char *s, int fd);
-int	ft_strlen(char *str);
-
 int	main(void)
 {
  	int fd;
@@ -30,21 +32,3 @@ int	main(void)
 	return (0);
 }
 */
-void	ft_putendl_fd(char *str, int fd)
-{
-	write(fd, str, ft_strlen(str));
-	write(fd, "\n", 1);
-}
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (*str)
-	{
-		i++;
-		str++;
-	}
-	return (i);
-}

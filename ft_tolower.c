@@ -6,13 +6,17 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:30:16 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/19 13:13:24 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 14:07:31 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
+int	ft_tolower(int c)
+{
+	if (c > 64 && c < 91)
+		c += 32;
+	return (c);
+}
+/* Main
 #include <stdio.h>
-
-int	ft_tolower(int c);
 int	main(void)
 {
 	int c;
@@ -25,9 +29,3 @@ int	main(void)
 	printf("End Char = %c\n", i);
 }
 */
-int	ft_tolower(int c)
-{
-	if (c > 64 && c < 91)
-		c += 32;
-	return (c);
-}

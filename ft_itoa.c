@@ -6,24 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:48:53 by lbastien          #+#    #+#             */
-/*   Updated: 2022/09/21 15:34:59 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 14:52:14 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdlib.h>
-/*
-#include<stdio.h>
-char	*ft_itoa(int n);
-int	main(void)
-{
-	int	n;
 
-	printf("Enter a number:");
-	scanf("%d", &n);
-	printf("The resulted string is:\n%s\n", ft_itoa(n));
-	free(ft_itoa(n));
-	return (0);
-}
-*/
 char	ft_modulo(int n);
 int		ft_decimals(int n);
 int		ft_createtmp(char *tmp, int n);
@@ -89,3 +75,16 @@ int	ft_decimals(int n)
 	}
 	return (d);
 }
+/* Main
+#include<stdio.h>
+int	main(void)
+{
+	int	n;
+
+	printf("Enter a number:");
+	scanf("%d", &n);
+	printf("The resulted string is:\n%s\n", ft_itoa(n));
+	free(ft_itoa(n));
+	return (0);
+}
+*/
