@@ -6,27 +6,34 @@
 #    By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 22:10:10 by lbastien          #+#    #+#              #
-#    Updated: 2022/10/11 15:32:30 by lbastien         ###   ########.fr        #
+#    Updated: 2022/10/11 17:32:48 by lbastien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-SRCS = *.c
-OBJS = $(SRCS:%.c=%.o)
-HEADS = *.h
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-RM = rm -f
+NAME =		libft.a
 
-all:
-	$(CC) $(CFLAGS) -I $(HEADS) -c $(SRCS)
-	ar -rv $(NAME) $(OBJS)
-	ranlib $(NAME)
+CC =		gcc
+CFLAG =		-Wall -Wextra -Werror
+
+AR =		ar rcs
+RM =		rm -f
+
+SRC =		$(wildcard *.c)
+OBJ =		$(SRC:%.c=%.o)
+HEAD =		libft.h
+
+all:		$(NAME)
+
+$(NAME):	$(OBJ) $(HEAD)
+	$(AR) $(NAME) $(OBJ)
+
+%.o: 		%.c
+	$(CC) $(CFLAG) -I./ -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJ)
 
-fclean: clean
+fclean: 	clean
 	$(RM) $(NAME)
 
 re: fclean all

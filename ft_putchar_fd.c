@@ -6,9 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 17:57:01 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 15:20:17 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:34:56 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

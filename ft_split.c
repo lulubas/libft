@@ -6,9 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 17:00:49 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 14:55:20 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:35:35 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int		ft_count(char *s, char c);
 char	*ft_assign(char *str, int n);

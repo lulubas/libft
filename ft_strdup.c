@@ -6,9 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 16:03:21 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 14:27:48 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:35:50 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 void	ft_cpy(const char *str, char *ctr);
 
@@ -17,7 +18,7 @@ char	*ft_strdup(const char *str)
 	int		n;
 	char	*ctr;
 
-	n = ft_strlen(str);
+	n = ft_strlen((char *)str);
 	ctr = (char *)malloc(n * sizeof(char));
 	ft_cpy(str, ctr);
 	return (ctr);

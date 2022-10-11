@@ -6,9 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:48:53 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 14:52:14 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:36:09 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 char	ft_modulo(int n);
 int		ft_decimals(int n);

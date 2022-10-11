@@ -6,27 +6,11 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 16:40:21 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/10 22:38:46 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:33:25 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-/*
-#include <stdio.h>
-int	ft_atoi(const char *str);
-int	main(void)
-{
-	char	str[50];
-	
-	printf("Enter the string to try : ");
-	scanf("%s", str);
-	printf("Returned Value = %d\n", ft_atoi(str));
-	printf("Expected Value = %d\n", atoi(str));
+#include "libft.h"
 
-	if (ft_atoi(str) == atoi(str))
-		printf("\nSuccess !! Well done !!\n");
-	return(0);
-}
-*/
 int	ft_atoi(const char *str)
 {
 	int	r;
@@ -49,3 +33,19 @@ int	ft_atoi(const char *str)
 	}
 	return (r * n);
 }
+/* Main
+#include <stdio.h>
+int	main(void)
+{
+	char	str[50];
+	
+	printf("Enter the string to try : ");
+	scanf("%s", str);
+	printf("Returned Value = %d\n", ft_atoi(str));
+	printf("Expected Value = %d\n", atoi(str));
+
+	if (ft_atoi(str) == atoi(str))
+		printf("\nSuccess !! Well done !!\n");
+	return(0);
+}
+*/

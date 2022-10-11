@@ -6,9 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:56:09 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 14:52:21 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:35:58 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 char	*ft_trim(char const *s1, char const *set);
 

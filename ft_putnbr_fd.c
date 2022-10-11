@@ -6,9 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:31:58 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 15:24:06 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:33:59 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 void	ft_putnbr_fd(int nb, int fd)
 {

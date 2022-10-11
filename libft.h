@@ -6,11 +6,11 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 22:45:05 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 15:35:27 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:18:04 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
-# define LIBFT_F
+# define LIBFT_H
 
 # include<unistd.h>
 # include<string.h>
@@ -38,7 +38,7 @@ char	*ft_strdup(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlcpy(char *dst, const char *src, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t n);
-char	*ft_strjoin(char const *s1, chr const *s2);
+char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);

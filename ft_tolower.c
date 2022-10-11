@@ -6,9 +6,11 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:30:16 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 14:07:31 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:38:56 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 int	ft_tolower(int c)
 {
 	if (c > 64 && c < 91)

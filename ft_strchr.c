@@ -6,9 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:52:35 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 14:10:16 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:38:41 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 char	*ft_strchr(const char *str, int c)
 {

@@ -6,9 +6,10 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:07:04 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 14:28:03 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:36:42 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 char	*ft_strnstr(const char *hay, const char *nee, size_t n)
 {
