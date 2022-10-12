@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:07:04 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 16:36:42 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/12 20:43:18 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,7 +17,6 @@ char	*ft_strnstr(const char *hay, const char *nee, size_t n)
 	const char	*nee_tmp;
 	size_t		m;
 
-	m = n;
 	nee_tmp = nee;
 	hay_tmp = hay;
 	if (*nee == 0)
@@ -26,10 +25,12 @@ char	*ft_strnstr(const char *hay, const char *nee, size_t n)
 	{
 		hay_tmp = hay;
 		nee_tmp = nee;
-		while (*hay_tmp == *nee_tmp)
+		m = 0;
+		while (*hay_tmp == *nee_tmp && (n - m) > 0)
 		{
 			hay_tmp++;
 			nee_tmp++;
+			m++;
 		}
 		if (*nee_tmp == 0)
 			return ((char *)hay);

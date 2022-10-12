@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 16:03:21 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 17:35:50 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/12 22:04:42 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -34,6 +34,7 @@ void	ft_cpy(const char *str, char *ctr)
 		ctr[i] = str[i];
 		i++;
 	}
+	ctr[i] = 0;
 }
 /* Main
 #include <stdio.h>

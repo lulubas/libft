@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 13:18:21 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 16:37:26 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/12 20:28:17 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,12 +18,14 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	a = (unsigned char *)s1;
 	b = (unsigned char *)s2;
-	while (*a == *b && n > 1)
+	while (*a == *b && n)
 	{
 		a++;
 		b++;
 		n--;
 	}
+	if (n == 0)
+		return (0);
 	return (*a - *b);
 }
 /* Main

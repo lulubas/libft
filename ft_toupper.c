@@ -6,13 +6,13 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:01:41 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 14:03:20 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/12 19:52:03 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	if (c > 96 && c < 122)
+	if (c > 96 && c < 123)
 		c -= 32;
 	return (c);
 }

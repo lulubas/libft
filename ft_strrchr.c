@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:19:49 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 16:46:18 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/12 23:53:03 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,32 +14,34 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	char	a;
+	char	*tmp;
 	int		i;
 	int		j;
 
-	i = ft_strlen((char *)str);
-	a = c;
 	j = 0;
-	while (j < i)
+	a = c;
+	tmp = (char *)str;
+	i = ft_strlen(tmp) + 1;
+	while (j < i - 1)
 	{
-		str++;
+		tmp++;
 		j++;
 	}
-	while (i > 0 && *str != a)
+	while (i > 0 && *tmp != a)
 	{
-		str--;
+		tmp--;
 		i--;
 	}
 	if (i == 0)
 		return (0);
-	return ((char *)str);
+	return (tmp);
 }
 /* Main
 #include <stdio.h>
 int	main(void)
 {
-	char	str[50] = "This is a test string to try";
-	char	str_t[50] = "This is a test string to try";
+	char	str[50] = "bonjour";
+	char	str_t[50] = "bonjour";
 	int	c;
 	char t;
 
