@@ -6,83 +6,51 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:48:53 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/13 00:49:19 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/13 12:02:35 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	ft_modulo(long int n);
-int		ft_decimals(long int n);
-int		ft_createtmp(char *tmp, long int n);
-int		ft_check(char *str, int n, long int i);
+int	ft_count(long int n)
+{
+	int	c;
+
+	c = 0;
+	if (n == 0)
+		return (1);
+	while (n)
+	{
+		n /= 10;
+		c++;
+	}
+	return (c);
+}
 
 char	*ft_itoa(int m)
 {
 	char		*str;
-	char		*tmp;
+	long int	n;
 	int			i;
 	int			j;
-	long int	n;
 
-	i = 0;
+	j = 0;
 	n = m;
-	str = (char *)malloc(ft_decimals(n) + 1);
-	tmp = (char *)malloc(ft_decimals(n) + 1);
-	if (!str || !tmp)
+	i = ft_count(n);
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	if (!str)
 		return (0);
 	if (n < 0)
 	{
-		str[i] = '-';
-		i++;
+		*str = '-';
 		n *= -1;
+		j = 1;
 	}
-	j = ft_createtmp(tmp, n);
-	while (j--)
+	while (i--)
 	{
-		str[i] = tmp[j];
-		i++;
+		str[i + j] = n % 10 + 48;
+		n /= 10;
 	}
 	return (str);
-}
-
-int	ft_createtmp(char *tmp, long int n)
-{
-	int	i;
-
-	i = 0;
-	if (n == 0)
-	{
-		tmp[i] = '0';
-		return (1);
-	}
-	while (n > 0)
-	{
-		tmp[i] = ft_modulo(n);
-		n /= 10;
-		i++;
-	}
-	return (i);
-}
-
-char	ft_modulo(long int n)
-{
-	char	a;
-
-	a = (n % 10) + 48;
-	return (a);
-}
-
-int	ft_decimals(long int n)
-{
-	int	d;
-
-	d = 0;
-	while (n > 0)
-	{
-		d++;
-		n /= 10;
-	}
-	return (d);
 }
 /* Main
 #include<stdio.h>

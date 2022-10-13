@@ -6,63 +6,89 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 17:00:49 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/13 16:39:07 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/13 18:22:44 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include<string.h>
+#include<stdio.h>
 
-int		ft_count(char *s, char c);
-char	*ft_assign(char *str, int n);
-
-char	**ft_split(char const *s, char c)
+int	ft_countwords(const	char *s, char c)
 {
-	char	**array;
-	char	*tmp;
 	int		i;
-	int		n;
+	int 	count;
+	int		len;
+	int		check_i;
 
-	tmp = (char *)s;
-	array = (char **)malloc(sizeof(char *) * strlen(tmp));
-	if (!array)
-		return (0);
+	len = strlen((char *)s);	
+	count = 0;
 	i = 0;
-	while (*tmp)
+	while (s[i] != 0)
 	{
-		while (*tmp == c)
-			tmp++;
-		n = ft_count(tmp, c);
-		array[i] = ft_assign(tmp, n);
-		tmp += n + 1;
+		while (s[i] == c && i < len)
+			i++;
+		check_i = i;
+		while (s[i] != c && i < len)
+			i++;
+		if (i > check_i)
+			count++;
 		i++;
 	}
-	array[i] = NULL;
-	return (array);
+	return (count);
 }
-
-int	ft_count(char *s, char c)
+/*
+char *create_buffer(char const *s, char c)
 {
-	int	n;
+	int	i;
+	char *buffer;
 
-	n = 0;
-	while (*s && *s != c)
+	i = 0;
+	j = 0;
+	while (s[i])
 	{
-		n++;
-		s++;
+		while (strchr(s, c))
+			i++;
+		while (strchr(s, c) == NULL)
+		{
+			buffer[j] = s[i];
+			j++;
+			i++;
+		}
 	}
-	return (n);
+	return (count)
 }
 
-char	*ft_assign(char *str, int n)
+char **ft_split(char const *s, char c)
 {
-	char	*word;
-
-	word = (char *)malloc(n);
-	if (!word)
-		return (0);
-	strlcpy(word, str, n + 1);
-	return (word);
+	char	**array;
+	int		word_count;
+	int		buffer_size
+	int		i;
+	
+	i = 0;
+	word_count = ft_countwords(s, c);
+	array = (char **)malloc(sizeof(char *) * word_count);
+	array[i] = (char *)malloc(buffer_size[i]);
 }
+*/
+
+// Main
+#include<stdio.h>
+int	main(void)
+{
+	const char	str[100] = "ifd";
+	char	c;
+	int		i;
+
+	i = 0;;	
+	c = ';';
+	printf("The initial string is: %s\n", str);
+	printf("The delimiter character is: %c\n", c);
+	printf("word count is : \n%d\n", ft_countwords(str, c));
+	return (0);
+}
+
+
 /* Main
 #include<stdio.h>
 int	main(void)

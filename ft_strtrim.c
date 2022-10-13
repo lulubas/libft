@@ -6,62 +6,44 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:56:09 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 16:35:58 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:29:55 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_trim(char const *s1, char const *set);
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
+	char	*tmp;
 	int		n;
-
-	n = ft_strlen(ft_trim(s1, set));
-	str = (char *)malloc(n);
-	if (!str)
-		return (0);
-	ft_strlcpy(str, ft_trim(s1, set), n);
-	return (str);
-}
-
-char	*ft_trim(char const *s1, char const *set)
-{
-	char	*strtmp;
 	int		i;
-	int		n;
 
-	strtmp = (char *)s1;
-	n = ft_strlen((char *)s1);
 	i = 0;
-	while (set[i])
+	n = ft_strlen((char *)s1);
+	tmp = (char *)s1;
+	str = (char *)malloc(sizeof(char) * (n + 1));
+	if (str == 0)
+		return (0);
+	while (*tmp && ft_strchr(set, *tmp))
 	{
-		if (strtmp[n - 1] == set[i])
-		{
-			strtmp[n - 1] = 0;
-			n--;
-		}
-		if (*strtmp == set[i])
-		{
-			strtmp++;
-			n--;
-			i = 0;
-		}
-		i++;
+		tmp++;
+		n--;
 	}
-	return (strtmp);
+	while (n && ft_strchr(set, tmp[n - 1]))
+		n--;
+	ft_strlcpy(str, tmp, n + 1);
+	return (str);
 }
 /* Main
 #include<stdio.h>
 int	main(void)
 {
-	char	s1[50] = "Hello my name is lulu";
-	char	set[10] = "helloa";
+	char	s1[50] = "Hello louis \t";
+	char	set[10] = "is \t";
 
-	printf("The initial string is: %s\n", s1);
-	printf("The chars to trim are: %s\n", set);
-	printf("Result : %s\n", ft_strtrim(s1, set));
+	printf("The initial string is: \n%s\n", s1);
+	printf("The chars to trim are: \n%s\n", set);
+	printf("Result : \n%s\n", ft_strtrim(s1, set));
 	free(ft_strtrim(s1, set));
 	return (0);
 }

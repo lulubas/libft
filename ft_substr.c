@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:26:30 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 16:37:10 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:35:56 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,9 +20,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub = (char *)malloc(sizeof(char) * len + 1);
 	if (!sub)
 		return (0);
-	while (len-- && s[start - 1])
+	while (len-- && s[start])
 	{
-		sub[i] = s[start - 1];
+		sub[i] = s[start];
 		i++;
 		start++;
 	}
@@ -42,8 +42,7 @@ int	main(void)
 	scanf("%d", &start);
 	printf("Enter substring length:");
 	scanf("%zu", &len);
-	printf("\nResult : %s\n", ft_substr(s, start, len));
-
+	printf("\nResult : \n%s\n", ft_substr(s, start, len));
 	free(ft_substr(s, start, len));
 	return(0);
 }
