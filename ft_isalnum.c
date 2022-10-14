@@ -6,12 +6,15 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:18:14 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/11 13:39:14 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/14 17:41:52 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(unsigned char a)
+int	ft_isalnum(int c)
 {
+	char	a;
+
+	a = c;
 	if ((a < 'A' || a > 'Z') && (a < 'a' || a > 'z') && (a < '0' || a > '9'))
 		return (0);
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 22:45:05 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/12 22:43:24 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/14 17:35:27 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -16,7 +16,7 @@
 # include<string.h>
 # include<stdlib.h>
 
-int		ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 int		ft_isalpha(unsigned char a);
 int		ft_isdigit(unsigned char a);
 int		ft_isalnum(unsigned char a);

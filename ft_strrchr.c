@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:19:49 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/12 23:53:03 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/14 17:31:09 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,8 +15,8 @@ char	*ft_strrchr(const char *str, int c)
 {
 	char	a;
 	char	*tmp;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	j = 0;
 	a = c;
