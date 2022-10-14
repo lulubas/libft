@@ -6,34 +6,34 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 13:18:21 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/12 20:28:17 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/14 18:18:14 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*a;
-	unsigned char	*b;
+	const unsigned char	*a;
+	const unsigned char	*b;
+	size_t			i;
 
-	a = (unsigned char *)s1;
-	b = (unsigned char *)s2;
-	while (*a == *b && n)
+	i = 0;
+	a = (const unsigned char *)s1;
+	b = (const unsigned char *)s2;
+	while (i < n)
 	{
-		a++;
-		b++;
-		n--;
+		if (a[i] != b[i])
+			return (a[i] - b[i]);
+		i++;
 	}
-	if (n == 0)
-		return (0);
-	return (*a - *b);
+	return (0);
 }
 /* Main
 #include <stdio.h>
 int	main(void)
 {
-	char	src[50] = "Hellooo";
-	char	dst[50] = "Helooooo";
+	char	src[50] = "aaaaa";
+	char	dst[50] = "aaaaaa";
 	size_t	n;
 
 	printf("Enter n :");
