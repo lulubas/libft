@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:48:53 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/13 12:02:35 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/18 20:48:25 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,8 +16,11 @@ int	ft_count(long int n)
 	int	c;
 
 	c = 0;
-	if (n == 0)
-		return (1);
+	if (n <= 0)
+	{
+		c++;
+		n *= -1;
+	}
 	while (n)
 	{
 		n /= 10;
@@ -39,16 +42,18 @@ char	*ft_itoa(int m)
 	str = (char *)malloc(sizeof(char) * (i + 1));
 	if (!str)
 		return (0);
+	str[i] = 0;
 	if (n < 0)
 	{
-		*str = '-';
+		str[0] = '-';
 		n *= -1;
-		j = 1;
+		j++;
 	}
-	while (i--)
+	while (i - j > 0)
 	{
-		str[i + j] = n % 10 + 48;
+		str[i - 1] = n % 10 + 48;
 		n /= 10;
+		i--;
 	}
 	return (str);
 }
@@ -58,10 +63,9 @@ int	main(void)
 {
 	int	n;
 
-	printf("Enter a number:");
-	scanf("%d", &n);
-	printf("The resulted string is:\n%s\n", ft_itoa(n));
-	free(ft_itoa(n));
+	n = 125434;
+	printf("The number is: %d\n", n);
+	printf("The resulted string is: >%s<\n", ft_itoa(n));
 	return (0);
 }
 */

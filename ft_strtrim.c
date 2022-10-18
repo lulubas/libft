@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:56:09 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/14 17:33:52 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/10/18 21:01:20 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,9 +19,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	n = ft_strlen(s1);
 	tmp = (char *)s1;
-	str = (char *)malloc(sizeof(char) * (n + 1));
-	if (str == 0)
-		return (0);
 	while (*tmp && ft_strchr(set, *tmp))
 	{
 		tmp++;
@@ -29,6 +26,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	while (n && ft_strchr(set, tmp[n - 1]))
 		n--;
+	str = (char *)malloc(sizeof(char) * (n + 1));
+	if (str == 0)
+		return (0);
 	ft_strlcpy(str, tmp, n + 1);
 	return (str);
 }
