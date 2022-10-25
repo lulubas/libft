@@ -5,25 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 17:00:49 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/25 22:20:26 by lbastien         ###   ########.fr       */
+/*   Created: 2022/10/26 00:56:08 by lbastien          #+#    #+#             */
+/*   Updated: 2022/10/26 01:02:53 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include<string.h>
-#include<stdio.h>
 
 size_t	ft_countwords(const	char *s, char c)
 {
-	size_t	i;
-	size_t	count;
-	size_t	len;
-	size_t	check_i;
+	int		i;
+	int		count;
+	int		len;
+	int		check_i;
 
 	len = ft_strlen(s);
 	count = 0;
 	i = 0;
-	while (s[i] != 0)
+	while (i < len)
 	{
 		while (s[i] == c && i < len)
 			i++;
@@ -40,8 +39,8 @@ size_t	ft_countwords(const	char *s, char c)
 char	*ft_create_word(char const *s, int i, char c)
 {
 	char	*word;
-	size_t	j;
-	size_t	k;
+	int		j;
+	int		k;
 
 	j = 0;
 	k = i;
@@ -64,16 +63,18 @@ char	**ft_split(char const *s, char c)
 	size_t	word_count;
 	size_t	word_index;
 	size_t	i;
+	size_t	len;
 
 	i = 0;
+	len = ft_strlen(s);
 	word_index = 0;
 	word_count = ft_countwords(s, c);
-	array = (char **)malloc(sizeof(char *) * word_count + 1);
+	array = (char **)malloc(sizeof(char *) * (word_count + 1));
 	if (!array)
 		return (0);
-	while (word_index < word_count && word_count != 0)
+	while (word_index < word_count)
 	{
-		while (s[i] == c && s[i])
+		while (s[i] == c && i < len)
 			i++;
 		array[word_index] = ft_create_word(s, i, c);
 		i += ft_strlen(array[word_index]);
@@ -87,14 +88,15 @@ char	**ft_split(char const *s, char c)
 int	main(void)
 {
 	size_t	i;
+	char	str[50] = "Hello this is a test";
 	size_t	word_count;
 	char	**array;
+	char 	c = ' ';
 
 	i = 0;
-	word_count = ft_countwords("tripouille test", ' ');
-	printf("The number of words is : %zu\n", ft_countwords("tripouille test", ' '));
-	
-	array = ft_split ("tripouille test", ' ');
+	word_count = ft_countwords(str, c);
+	printf("The number of words is : %zu\n", ft_countwords(str, c));
+	array = ft_split (str, c);
 	while (i < word_count)
 	{
 		printf("%s\n", array[i]);
@@ -103,5 +105,3 @@ int	main(void)
 	return (0);
 }
 */
-//	printf("word count %zu\n", word_count);
-//	printf("word index %zu\n", word_index);
