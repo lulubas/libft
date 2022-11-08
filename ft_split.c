@@ -6,11 +6,25 @@
 /*   By: lbastien <lbastien@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 00:56:08 by lbastien          #+#    #+#             */
-/*   Updated: 2022/10/26 01:02:53 by lbastien         ###   ########.fr       */
+/*   Updated: 2022/11/08 17:25:07 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include<string.h>
+
+static char	**ft_malloc_error(char **array)
+{
+	size_t	i;
+
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+	return (NULL);
+}
 
 size_t	ft_countwords(const	char *s, char c)
 {
@@ -50,6 +64,8 @@ char	*ft_create_word(char const *s, int i, char c)
 		k++;
 	}
 	word = (char *)malloc(sizeof(char) * j + 1);
+	if (!word)
+		return (0);
 	j = 0;
 	while (s[i] != c && s[i])
 		word[j++] = s[i++];
@@ -77,6 +93,8 @@ char	**ft_split(char const *s, char c)
 		while (s[i] == c && i < len)
 			i++;
 		array[word_index] = ft_create_word(s, i, c);
+		if (!array[word_index])
+			return (ft_malloc_error(array));
 		i += ft_strlen(array[word_index]);
 		word_index++;
 	}
@@ -103,5 +121,4 @@ int	main(void)
 		i++;
 	}
 	return (0);
-}
 */
